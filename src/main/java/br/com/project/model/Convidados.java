@@ -1,38 +1,31 @@
 package br.com.project.model;
 
-public class Convidados {
+import java.util.ArrayList;
+import java.util.List;
 
-	private String nome;
-	private Integer quantidadeAcompanhantes;
+import org.springframework.stereotype.Repository;
+
+
+@Repository
+public class Convidados {
 	
-	public Convidados(){
+	private static final List<Convidado> LIS_CONVIDADOS = new ArrayList<>();
+	
+	static {
+		LIS_CONVIDADOS.add(new Convidado("Pedro", 2));
+		LIS_CONVIDADOS.add(new Convidado("Maria", 3));
+		LIS_CONVIDADOS.add(new Convidado("Ricardo", 1));
+				
+	}
+	
+	public List<Convidado> todos(){
+		return Convidados.LIS_CONVIDADOS;
+	}
+	
+	public void adicionar(Convidado convidado){
+		Convidados.LIS_CONVIDADOS.add(convidado);
 		
 	}
 	
-	public Convidados(String nome, Integer quantidadeAcompanhantes) {
-	
-		this.nome = nome;
-		this.quantidadeAcompanhantes = quantidadeAcompanhantes;
-	
-	}
 
-	public String getNome() {
-		return nome;
-	}
-
-	public Integer getQuantidadeAcompanhantes() {
-		return quantidadeAcompanhantes;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public void setQuantidadeAcompanhantes(Integer quantidadeAcompanhantes) {
-		this.quantidadeAcompanhantes = quantidadeAcompanhantes;
-	}
-	
-	
-	
-	
-}
+};
