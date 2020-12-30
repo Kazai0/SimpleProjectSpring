@@ -16,15 +16,16 @@ public class ConvidadosControler {
 	//a URL http://localhost:8080/ convidados, e o Spring MVC saberá que a view
 	@Autowired
 	private Convidados convidados;
-	
+
 	@RequestMapping
 	public ModelAndView listar(){
-		
-	
+
 		
 		ModelAndView mv = new ModelAndView("ListaConvidados");
 	
 		mv.addObject(new Convidado());
+
+		mv.addObject("convidados", convidados.todos());
 		
 		return mv;
 	}

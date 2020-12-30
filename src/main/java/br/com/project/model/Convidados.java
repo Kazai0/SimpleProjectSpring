@@ -5,27 +5,24 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-
 @Repository
 public class Convidados {
-	
-	private static final List<Convidado> LIS_CONVIDADOS = new ArrayList<>();
-	
+
+	private static final List<Convidado> LISTA_CONVIDADOS = new ArrayList<>();
+
 	static {
-		LIS_CONVIDADOS.add(new Convidado("Pedro", 2));
-		LIS_CONVIDADOS.add(new Convidado("Maria", 3));
-		LIS_CONVIDADOS.add(new Convidado("Ricardo", 1));
-				
+		LISTA_CONVIDADOS.add(new Convidado("Pedro", 2));
+		LISTA_CONVIDADOS.add(new Convidado("Maria", 3));
+		LISTA_CONVIDADOS.add(new Convidado("Ricardo", 1));
+
 	}
-	
-	public List<Convidado> todos(){
-		return Convidados.LIS_CONVIDADOS;
+
+	public List<Convidado> todos() {
+		return Convidados.LISTA_CONVIDADOS;
 	}
-	
-	public void adicionar(Convidado convidado){
-		Convidados.LIS_CONVIDADOS.add(convidado);
-		
+
+	public void adicionar(Convidado convidado) {
+		Convidados.LISTA_CONVIDADOS.add(convidado);
 	}
-	
 
 };

@@ -10,6 +10,9 @@ public class SimpleProjectSpringApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SimpleProjectSpringApplication.class, args);
+		
+		
+		
 	}
 
 }
